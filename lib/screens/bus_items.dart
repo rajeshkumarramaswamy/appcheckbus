@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
 class BusItems extends StatefulWidget {
-  const BusItems({super.key});
+  final String busName;
+  final String busType;
+  const BusItems({required this.busName, required this.busType});
 
   @override
   State<BusItems> createState() => _BusItemsState();
@@ -21,7 +23,7 @@ class _BusItemsState extends State<BusItems> {
             createRectTween: (Rect? begin, Rect? end) {
               return MaterialRectCenterArcTween(begin: begin, end: end);
             },
-            tag: 'BusImage',
+            tag: 'hero-bus',
             child: Container(
               height: 400.0,
               width: 400.0,
@@ -29,7 +31,7 @@ class _BusItemsState extends State<BusItems> {
                   borderRadius: BorderRadius.circular(15),
                   image: const DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage("assets/images/xeat_logo.png"))),
+                      image: AssetImage("assets/images/bus_logo.png"))),
             ),
           ),
         ),
@@ -39,25 +41,38 @@ class _BusItemsState extends State<BusItems> {
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 5.0;
     return ListTile(
         leading: Hero(
-            tag: "BusImage",
+            tag: "hero-bus",
             createRectTween: (Rect? begin, Rect? end) {
               return MaterialRectCenterArcTween(begin: begin, end: end);
             },
-            child: Container(
-              height: 80,
-              width: 80,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  image: const DecorationImage(
-                      fit: BoxFit.fitHeight,
-                      image: AssetImage("assets/images/xeat_logo.png"))),
+            child: GestureDetector(
+              onTap: () => _gotoDetailsPage(context),
+              child: Container(
+                height: 80,
+                width: 80,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: const DecorationImage(
+                        fit: BoxFit.fitHeight,
+                        image: AssetImage("assets/images/bus_logo.png"))),
+              ),
             )),
-        title: Text("Travel to Jaffna"),
-        subtitle: Text("Semi-sleeper"),
-        trailing: Text("Rs 3456"),
-        onTap: () => _gotoDetailsPage(context));
+        title: Text(
+          widget.busName,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        subtitle:
+            Text(widget.busType, style: TextStyle(fontWeight: FontWeight.bold)),
+        trailing:
+            Text("Rs 3456", style: TextStyle(fontWeight: FontWeight.bold)),
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute<void>(
+            builder: (BuildContext context) => const Scaffold(
+              body: BusTicketDetails(),
+            ),
+          ));
+        });
   }
 }

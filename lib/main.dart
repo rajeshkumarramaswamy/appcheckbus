@@ -1,3 +1,6 @@
+import 'package:busbooking/screens/book_ticket.dart';
+import 'package:busbooking/screens/bus_list.dart';
+import 'package:busbooking/screens/home.dart';
 import 'package:busbooking/widgets/bottom_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -16,22 +19,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "Montserrat",
       ),
-      home: const MyHomePage(title: 'Bus'),
+      home: const BottomBar(),
+      routes: {
+        "/bookticket": (context) => const BookTicket(),
+        "/buslist": (context) => const BusList(),
+        "/profile": (context) => const Home(),
+      },
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return const BottomBar();
   }
 }

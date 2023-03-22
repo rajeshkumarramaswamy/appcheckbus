@@ -1,3 +1,4 @@
+import 'package:busbooking/screens/bus_list.dart';
 import 'package:busbooking/utils/project_theme.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class _BookTicketState extends State<BookTicket> {
   TextEditingController dateController = TextEditingController();
   @override
   void initState() {
-    dateController.text = ""; //set the initial value of text field
+    dateController.text = "";
     super.initState();
   }
 
@@ -123,6 +124,26 @@ class _BookTicketState extends State<BookTicket> {
                       readOnly: true,
                       onTap: () async {
                         DateTime? pickedDate = await showDatePicker(
+                            builder: (context, child) {
+                              return Theme(
+                                data: Theme.of(context).copyWith(
+                                  colorScheme: ColorScheme.light(
+                                    primary: ProjectTheme
+                                        .appRed, // header background color
+                                    onPrimary:
+                                        Colors.white, // header text color
+                                    onSurface: Colors.black, // body text color
+                                  ),
+                                  textButtonTheme: TextButtonThemeData(
+                                    style: TextButton.styleFrom(
+                                      primary: ProjectTheme
+                                          .appRed, // button text color
+                                    ),
+                                  ),
+                                ),
+                                child: child!,
+                              );
+                            },
                             context: context,
                             initialDate: DateTime.now(),
                             firstDate: DateTime(2000),
@@ -158,7 +179,13 @@ class _BookTicketState extends State<BookTicket> {
                       icon: const Icon(FluentSystemIcons
                           .ic_fluent_arrow_right_circle_filled),
                       color: ProjectTheme.appRed,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute<void>(
+                          builder: (BuildContext context) => Scaffold(
+                            body: BusList(),
+                          ),
+                        ));
+                      },
                     ),
                   ),
                 ],

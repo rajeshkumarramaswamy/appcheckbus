@@ -43,7 +43,9 @@ class _BusListState extends State<BusList> {
                   icon: const Icon(
                       FluentSystemIcons.ic_fluent_chevron_left_filled),
                   color: ProjectTheme.appGrey,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
                 ),
                 const SizedBox(
                   width: 10.0,
@@ -142,24 +144,63 @@ class _BusListState extends State<BusList> {
           right: 0,
           child: ListView(
             padding: const EdgeInsets.all(8),
-            children: <Widget>[
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
-              BusItems(),
+            children: const <Widget>[
+              BusItems(
+                busName: "Svr",
+                busType: "Non AC",
+              ),
+              BusItems(
+                busName: "Autoit",
+                busType: "Non AC",
+              ),
+              BusItems(
+                busName: "Bose",
+                busType: "Non AC",
+              ),
+              BusItems(
+                busName: "Srilankan",
+                busType: "Non AC",
+              ),
+              BusItems(
+                busName: "Bharath",
+                busType: "Non AC",
+              ),
+              BusItems(
+                busName: "Orange",
+                busType: "AC",
+              ),
+              BusItems(
+                busName: "Green",
+                busType: "Non AC",
+              ),
+              BusItems(
+                busName: "Krishna",
+                busType: "Non AC",
+              ),
+              BusItems(
+                busName: "Amman",
+                busType: "AC",
+              ),
+              BusItems(
+                busName: "Srivari",
+                busType: "Non AC",
+              ),
+              BusItems(
+                busName: "Venkateswara",
+                busType: "Non AC",
+              ),
+              BusItems(
+                busName: "Jon",
+                busType: "Non AC",
+              ),
+              BusItems(
+                busName: "Stewart",
+                busType: "Non AC",
+              ),
+              BusItems(
+                busName: "Anthony",
+                busType: "Non Ac",
+              ),
             ],
           ),
         ),
