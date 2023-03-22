@@ -1,4 +1,4 @@
-import 'package:busbooking/screens/bus_list.dart';
+import 'package:busbooking/screens/hotel_list.dart';
 import 'package:busbooking/utils/project_theme.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,7 @@ class _BookHotelState extends State<BookHotel> {
     return Stack(
       children: [
         Container(
-          height: 600,
+          height: 500,
           decoration: BoxDecoration(
               color: ProjectTheme.appRed,
               borderRadius: const BorderRadius.only(
@@ -64,7 +64,7 @@ class _BookHotelState extends State<BookHotel> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 30, vertical: 30),
+                        horizontal: 30, vertical: 20),
                     child: TextFormField(
                       style: const TextStyle(
                           fontSize: 30,
@@ -82,26 +82,26 @@ class _BookHotelState extends State<BookHotel> {
                               fontWeight: FontWeight.bold)),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 30, vertical: 30),
-                    child: TextFormField(
-                      style: const TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                      decoration: const InputDecoration(
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
-                          ),
-                          focusColor: Colors.white,
-                          labelText: 'Hotel',
-                          labelStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold)),
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.symmetric(
+                  //       horizontal: 30, vertical: 20),
+                  //   child: TextFormField(
+                  //     style: const TextStyle(
+                  //         fontSize: 30,
+                  //         fontWeight: FontWeight.bold,
+                  //         color: Colors.white),
+                  //     decoration: const InputDecoration(
+                  //         enabledBorder: UnderlineInputBorder(
+                  //           borderSide: BorderSide(color: Colors.white),
+                  //         ),
+                  //         focusColor: Colors.white,
+                  //         labelText: 'Hotel',
+                  //         labelStyle: TextStyle(
+                  //             color: Colors.white,
+                  //             fontSize: 20,
+                  //             fontWeight: FontWeight.bold)),
+                  //   ),
+                  // ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -112,8 +112,12 @@ class _BookHotelState extends State<BookHotel> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          width: 200.0,
+                          width: 300.0,
                           child: DateTimeFormField(
+                            dateTextStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold),
                             decoration: const InputDecoration(
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(color: Colors.white),
@@ -128,7 +132,7 @@ class _BookHotelState extends State<BookHotel> {
                                 labelText: 'Start date',
                                 labelStyle: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 20,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.bold)),
                             mode: DateTimeFieldPickerMode.dateAndTime,
                             autovalidateMode: AutovalidateMode.always,
@@ -140,12 +144,16 @@ class _BookHotelState extends State<BookHotel> {
                             },
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                         Container(
-                          width: 200.0,
+                          width: 300,
                           child: DateTimeFormField(
+                            dateTextStyle: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold),
                             decoration: const InputDecoration(
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(color: Colors.white),
@@ -175,38 +183,8 @@ class _BookHotelState extends State<BookHotel> {
                       ],
                     ),
                   ),
-
-                  // MaterialButton(
-                  //     color: Colors.deepOrangeAccent,
-                  //     onPressed: () {
-                  //       showCustomDateRangePicker(
-                  //         context,
-                  //         dismissible: true,
-                  //         minimumDate:
-                  //             DateTime.now().subtract(const Duration(days: 30)),
-                  //         maximumDate:
-                  //             DateTime.now().add(const Duration(days: 30)),
-                  //         endDate: endDate,
-                  //         startDate: startDate,
-                  //         backgroundColor: Colors.white,
-                  //         primaryColor: Colors.black,
-                  //         onApplyClick: (start, end) {
-                  //           setState(() {
-                  //             endDate = end;
-                  //             startDate = start;
-                  //           });
-                  //         },
-                  //         onCancelClick: () {
-                  //           setState(() {
-                  //             endDate = null;
-                  //             startDate = null;
-                  //           });
-                  //         },
-                  //       );
-                  //     },
-                  //     child: new Text("Pick date range")),
                   const SizedBox(
-                    height: 80,
+                    height: 120,
                   ),
                   Container(
                     decoration:
@@ -223,8 +201,8 @@ class _BookHotelState extends State<BookHotel> {
                       color: ProjectTheme.appRed,
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute<void>(
-                          builder: (BuildContext context) => Scaffold(
-                            body: BusList(),
+                          builder: (BuildContext context) => const Scaffold(
+                            body: HotelList(),
                           ),
                         ));
                       },

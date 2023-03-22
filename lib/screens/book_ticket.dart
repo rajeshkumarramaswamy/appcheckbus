@@ -100,7 +100,7 @@ class _BookTicketState extends State<BookTicket> {
                     ),
                   ),
                   const SizedBox(
-                    height: 50,
+                    height: 30,
                   ),
                   Container(
                     width: 300,
