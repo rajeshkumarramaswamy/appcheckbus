@@ -15,10 +15,7 @@ class _BusItemsState extends State<BusItems> {
   void _gotoDetailsPage(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute<void>(
       builder: (BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: const Text('Second Page'),
-          backgroundColor: Colors.white,
-        ),
+        appBar: AppBar(),
         body: Center(
           child: Hero(
             createRectTween: (Rect? begin, Rect? end) {
@@ -59,6 +56,8 @@ class _BusItemsState extends State<BusItems> {
                       image: AssetImage("assets/images/xeat_logo.png"))),
             )),
         title: Text("Travel to Jaffna"),
+        subtitle: Text("Semi-sleeper"),
+        trailing: Text("Rs 3456"),
         onTap: () => _gotoDetailsPage(context));
   }
 }

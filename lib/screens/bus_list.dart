@@ -104,17 +104,34 @@ class _BusListState extends State<BusList> {
           ),
         ),
         Positioned(
-          top: 150,
-          left: 30,
-          width: 355,
+          top: 130,
+          left: 40,
+          width: 340,
           height: 80,
-          child: Container(
-            child: Text(
-              "35 busses available",
-              style: TextStyle(
-                  color: ProjectTheme.appGrey,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20),
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  child: Text(
+                    "35 busses",
+                    style: TextStyle(
+                        color: ProjectTheme.appGrey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                ),
+                Container(
+                  child: Text(
+                    "Mar 23, 2023",
+                    style: TextStyle(
+                        color: ProjectTheme.appGrey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                )
+              ],
             ),
           ),
         ),
@@ -131,40 +148,21 @@ class _BusListState extends State<BusList> {
               BusItems(),
               BusItems(),
               BusItems(),
+              BusItems(),
+              BusItems(),
+              BusItems(),
+              BusItems(),
+              BusItems(),
+              BusItems(),
+              BusItems(),
+              BusItems(),
+              BusItems(),
+              BusItems(),
+              BusItems(),
+              BusItems(),
             ],
           ),
         ),
-
-        // Positioned(
-        //   top: 180,
-        //   child: Container(
-        //     child: Column(
-        //       children: [
-        //         Container(
-        //           decoration: BoxDecoration(
-        //             border: Border.all(width: 2.0, color: ProjectTheme.appGrey),
-        //             borderRadius: BorderRadius.circular(20),
-        //             color: Colors.white,
-        //           ),
-        //           child: Row(
-        //             children: [
-        //               IconButton(
-        //                 iconSize: 30,
-        //                 icon: const Icon(
-        //                     FluentSystemIcons.ic_fluent_arrow_up_right_filled),
-        //                 color: ProjectTheme.appGrey,
-        //                 onPressed: () {},
-        //               ),
-        //             ],
-        //           ),
-        //         ),
-        //         Text("hjhdsjdhsjdh"),
-        //         Text("hjhdsjdhsjdh"),
-        //         Text("hjhdsjdhsjdh"),
-        //       ],
-        //     ),
-        //   ),
-        // )
       ],
     );
   }
