@@ -7,7 +7,9 @@ import 'package:flutter/scheduler.dart';
 class BusItems extends StatefulWidget {
   final String busName;
   final String busType;
-  const BusItems({required this.busName, required this.busType});
+  final String busCost;
+  const BusItems(
+      {required this.busName, required this.busType, required this.busCost});
 
   @override
   State<BusItems> createState() => _BusItemsState();
@@ -17,13 +19,23 @@ class _BusItemsState extends State<BusItems> {
   void _gotoDetailsPage(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute<void>(
       builder: (BuildContext context) => Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          backgroundColor: ProjectTheme.appRed,
+          leading: IconButton(
+            iconSize: 35,
+            icon: const Icon(FluentSystemIcons.ic_fluent_chevron_left_filled),
+            color: Colors.white,
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ),
         body: Center(
           child: Hero(
             createRectTween: (Rect? begin, Rect? end) {
               return MaterialRectCenterArcTween(begin: begin, end: end);
             },
-            tag: 'hero-bus',
+            tag: 'hero-bus-${widget.busName}',
             child: Container(
               height: 400.0,
               width: 400.0,
@@ -43,7 +55,7 @@ class _BusItemsState extends State<BusItems> {
   Widget build(BuildContext context) {
     return ListTile(
         leading: Hero(
-            tag: "hero-bus",
+            tag: 'hero-bus-${widget.busName}',
             createRectTween: (Rect? begin, Rect? end) {
               return MaterialRectCenterArcTween(begin: begin, end: end);
             },
@@ -66,7 +78,7 @@ class _BusItemsState extends State<BusItems> {
         subtitle:
             Text(widget.busType, style: TextStyle(fontWeight: FontWeight.bold)),
         trailing:
-            Text("Rs 3456", style: TextStyle(fontWeight: FontWeight.bold)),
+            Text(widget.busCost, style: TextStyle(fontWeight: FontWeight.bold)),
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute<void>(
             builder: (BuildContext context) => const Scaffold(

@@ -32,8 +32,15 @@ class _BusListState extends State<BusList> {
           child: Container(
             decoration: BoxDecoration(
               color: Colors.white,
-              border: Border.all(width: 2.0, color: Colors.grey),
               borderRadius: BorderRadius.circular(10.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 4.0,
+                  spreadRadius: 3.0,
+                  offset: Offset(2.0, 2.0), // shadow direction: bottom right
+                )
+              ],
             ),
             width: 150,
             child: Row(
@@ -148,58 +155,72 @@ class _BusListState extends State<BusList> {
               BusItems(
                 busName: "Svr",
                 busType: "Non AC",
+                busCost: "Rs 2345",
               ),
               BusItems(
                 busName: "Autoit",
                 busType: "Non AC",
+                busCost: "Rs 1232",
               ),
               BusItems(
                 busName: "Bose",
                 busType: "Non AC",
+                busCost: "Rs 2123",
               ),
               BusItems(
                 busName: "Srilankan",
                 busType: "Non AC",
+                busCost: "Rs 2333",
               ),
               BusItems(
                 busName: "Bharath",
                 busType: "Non AC",
+                busCost: "Rs 1234",
               ),
               BusItems(
                 busName: "Orange",
                 busType: "AC",
+                busCost: "Rs 3245",
               ),
               BusItems(
                 busName: "Green",
                 busType: "Non AC",
+                busCost: "Rs 2499",
               ),
               BusItems(
                 busName: "Krishna",
                 busType: "Non AC",
+                busCost: "Rs 1999",
               ),
               BusItems(
                 busName: "Amman",
                 busType: "AC",
+                busCost: "Rs 3222",
               ),
               BusItems(
                 busName: "Srivari",
                 busType: "Non AC",
+                busCost: "Rs 2499",
               ),
               BusItems(
                 busName: "Venkateswara",
                 busType: "Non AC",
+                busCost: "Rs 2499",
               ),
               BusItems(
                 busName: "Jon",
                 busType: "Non AC",
+                busCost: "Rs 1299",
               ),
               BusItems(
                 busName: "Stewart",
                 busType: "Non AC",
+                busCost: "Rs 1300",
               ),
               BusItems(
                 busName: "Anthony",
                 busType: "Non Ac",
+                busCost: "Rs 2345",
               ),
             ],
           ),

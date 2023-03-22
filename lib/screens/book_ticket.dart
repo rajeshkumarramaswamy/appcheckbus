@@ -164,7 +164,7 @@ class _BookTicketState extends State<BookTicket> {
                     ),
                   ),
                   const SizedBox(
-                    height: 100,
+                    height: 80,
                   ),
                   Container(
                     decoration:
@@ -175,7 +175,7 @@ class _BookTicketState extends State<BookTicket> {
                       ),
                     ]),
                     child: IconButton(
-                      iconSize: 100,
+                      iconSize: 80,
                       icon: const Icon(FluentSystemIcons
                           .ic_fluent_arrow_right_circle_filled),
                       color: ProjectTheme.appRed,
