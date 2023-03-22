@@ -1,6 +1,8 @@
+import 'package:busbooking/screens/book_hotel.dart';
 import 'package:busbooking/screens/book_ticket.dart';
 import 'package:busbooking/screens/bus_list.dart';
-import 'package:busbooking/screens/home.dart';
+import 'package:busbooking/screens/profile.dart';
+import 'package:busbooking/utils/project_theme.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +17,9 @@ class _BottomBarState extends State<BottomBar> {
   var _selectedIndex = 0;
   static final List<Widget> _widgetOptions = [
     const BookTicket(),
-    const Text("Profile"),
+    const BookHotel(),
     const BusList(),
-    const Home(),
+    const Profile(),
   ];
 
   void _functionSelect(int index) {
@@ -37,8 +39,8 @@ class _BottomBarState extends State<BottomBar> {
         elevation: 10,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.red,
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: ProjectTheme.appRed,
+        unselectedItemColor: ProjectTheme.appGrey,
         currentIndex: _selectedIndex,
         onTap: _functionSelect,
         type: BottomNavigationBarType.fixed,
@@ -46,15 +48,15 @@ class _BottomBarState extends State<BottomBar> {
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
-              label: "Home"),
+              label: "Bus"),
           BottomNavigationBarItem(
-              icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
-              activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled),
-              label: "Book"),
+              icon: Icon(FluentSystemIcons.ic_fluent_bed_regular),
+              activeIcon: Icon(FluentSystemIcons.ic_fluent_bed_filled),
+              label: "Hotels"),
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_ticket_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
-              label: "Tickets"),
+              label: "History"),
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_person_accounts_regular),
               activeIcon:

@@ -1,4 +1,4 @@
-import 'package:busbooking/screens/bus_image.dart';
+import 'package:busbooking/screens/bus_ticket_details.dart';
 import 'package:busbooking/utils/project_theme.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';

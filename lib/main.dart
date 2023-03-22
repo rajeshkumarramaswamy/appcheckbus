@@ -1,6 +1,7 @@
+import 'package:busbooking/screens/book_hotel.dart';
 import 'package:busbooking/screens/book_ticket.dart';
 import 'package:busbooking/screens/bus_list.dart';
-import 'package:busbooking/screens/home.dart';
+import 'package:busbooking/screens/profile.dart';
 import 'package:busbooking/widgets/bottom_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -22,8 +23,9 @@ class MyApp extends StatelessWidget {
       home: const BottomBar(),
       routes: {
         "/bookticket": (context) => const BookTicket(),
+        "/bookhotel": (context) => const BookHotel(),
         "/buslist": (context) => const BusList(),
-        "/profile": (context) => const Home(),
+        "/profile": (context) => const Profile(),
       },
     );
   }
