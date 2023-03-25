@@ -37,6 +37,7 @@ dependencies:
   book_my_seat: ^1.0.1
   flutter_svg:
   date_field: ^3.0.0
+  appwrite: ^8.1.0
 
 dev_dependencies:
   flutter_test:

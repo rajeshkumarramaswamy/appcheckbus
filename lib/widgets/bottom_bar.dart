@@ -36,9 +36,9 @@ class _BottomBarState extends State<BottomBar> {
       // ),
       body: _widgetOptions[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        elevation: 10,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        elevation: 20,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         selectedItemColor: ProjectTheme.appRed,
         unselectedItemColor: ProjectTheme.appGrey,
         currentIndex: _selectedIndex,

@@ -1,5 +1,5 @@
 import 'package:busbooking/screens/bus_list.dart';
-import 'package:busbooking/utils/project_theme.dart';
+import 'package:busbooking/theme/pallet.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -26,7 +26,7 @@ class _BookTicketState extends State<BookTicket> {
         Container(
           height: 600,
           decoration: BoxDecoration(
-              color: ProjectTheme.appRed,
+              gradient: Pallet.appGradient,
               borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(50),
                   bottomRight: Radius.circular(50))),
@@ -53,7 +53,7 @@ class _BookTicketState extends State<BookTicket> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 30,
-                        color: Colors.white),
+                        color: Pallet.appTextBlack),
                   ),
                 ],
               ),
@@ -128,7 +128,7 @@ class _BookTicketState extends State<BookTicket> {
                               return Theme(
                                 data: Theme.of(context).copyWith(
                                   colorScheme: ColorScheme.light(
-                                    primary: ProjectTheme
+                                    primary: Pallet
                                         .appRed, // header background color
                                     onPrimary:
                                         Colors.white, // header text color
@@ -136,8 +136,8 @@ class _BookTicketState extends State<BookTicket> {
                                   ),
                                   textButtonTheme: TextButtonThemeData(
                                     style: TextButton.styleFrom(
-                                      primary: ProjectTheme
-                                          .appRed, // button text color
+                                      primary:
+                                          Pallet.appRed, // button text color
                                     ),
                                   ),
                                 ),
@@ -178,7 +178,7 @@ class _BookTicketState extends State<BookTicket> {
                       iconSize: 80,
                       icon: const Icon(FluentSystemIcons
                           .ic_fluent_arrow_right_circle_filled),
-                      color: ProjectTheme.appRed,
+                      color: Pallet.appRed,
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute<void>(
                           builder: (BuildContext context) => Scaffold(

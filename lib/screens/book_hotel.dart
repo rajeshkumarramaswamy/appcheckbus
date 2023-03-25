@@ -1,4 +1,5 @@
 import 'package:busbooking/screens/hotel_list.dart';
+import 'package:busbooking/theme/pallet.dart';
 import 'package:busbooking/utils/project_theme.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -75,113 +76,92 @@ class _BookHotelState extends State<BookHotel> {
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: Colors.white),
                           ),
-                          labelText: 'City',
+                          labelText: 'Search City, Area, Hotel',
                           labelStyle: TextStyle(
                               color: Colors.white,
                               fontSize: 20,
                               fontWeight: FontWeight.bold)),
                     ),
                   ),
-                  // Padding(
-                  //   padding: const EdgeInsets.symmetric(
-                  //       horizontal: 30, vertical: 20),
-                  //   child: TextFormField(
-                  //     style: const TextStyle(
-                  //         fontSize: 30,
-                  //         fontWeight: FontWeight.bold,
-                  //         color: Colors.white),
-                  //     decoration: const InputDecoration(
-                  //         enabledBorder: UnderlineInputBorder(
-                  //           borderSide: BorderSide(color: Colors.white),
-                  //         ),
-                  //         focusColor: Colors.white,
-                  //         labelText: 'Hotel',
-                  //         labelStyle: TextStyle(
-                  //             color: Colors.white,
-                  //             fontSize: 20,
-                  //             fontWeight: FontWeight.bold)),
-                  //   ),
-                  // ),
                   const SizedBox(
                     height: 10,
                   ),
-                  Positioned(
-                    top: 100,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 300.0,
-                          child: DateTimeFormField(
-                            dateTextStyle: TextStyle(
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 300.0,
+                        child: DateTimeFormField(
+                          dateFormat: DateFormat("yMMMMd"),
+                          dateTextStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold),
+                          decoration: const InputDecoration(
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white),
+                              ),
+                              hintStyle: TextStyle(color: Colors.white),
+                              errorStyle: TextStyle(color: Colors.white),
+                              border: OutlineInputBorder(),
+                              suffixIcon: Icon(
+                                Icons.event_note,
                                 color: Colors.white,
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold),
-                            decoration: const InputDecoration(
-                                enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
-                                ),
-                                hintStyle: TextStyle(color: Colors.white),
-                                errorStyle: TextStyle(color: Colors.white),
-                                border: OutlineInputBorder(),
-                                suffixIcon: Icon(
-                                  Icons.event_note,
+                              ),
+                              labelText: 'Start date',
+                              labelStyle: TextStyle(
                                   color: Colors.white,
-                                ),
-                                labelText: 'Start date',
-                                labelStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold)),
-                            mode: DateTimeFieldPickerMode.dateAndTime,
-                            autovalidateMode: AutovalidateMode.always,
-                            validator: (e) => (e?.day ?? 0) == 1
-                                ? 'Please not the first day'
-                                : null,
-                            onDateSelected: (DateTime value) {
-                              print(value);
-                            },
-                          ),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold)),
+                          mode: DateTimeFieldPickerMode.dateAndTime,
+                          autovalidateMode: AutovalidateMode.always,
+                          validator: (e) => (e?.day ?? 0) == 1
+                              ? 'Please not the first day'
+                              : null,
+                          onDateSelected: (DateTime value) {
+                            print(value);
+                          },
                         ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        Container(
-                          width: 300,
-                          child: DateTimeFormField(
-                            dateTextStyle: const TextStyle(
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        width: 300,
+                        child: DateTimeFormField(
+                          dateFormat: DateFormat("yMMMMd"),
+                          dateTextStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold),
+                          decoration: const InputDecoration(
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white),
+                              ),
+                              hintStyle: TextStyle(color: Colors.white),
+                              errorStyle: TextStyle(color: Colors.white),
+                              border: OutlineInputBorder(),
+                              suffixIcon: Icon(
+                                Icons.event_note,
                                 color: Colors.white,
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold),
-                            decoration: const InputDecoration(
-                                enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
-                                ),
-                                hintStyle: TextStyle(color: Colors.white),
-                                errorStyle: TextStyle(color: Colors.white),
-                                border: OutlineInputBorder(),
-                                suffixIcon: Icon(
-                                  Icons.event_note,
+                              ),
+                              labelText: 'End date',
+                              labelStyle: TextStyle(
                                   color: Colors.white,
-                                ),
-                                labelText: 'End date',
-                                labelStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold)),
-                            mode: DateTimeFieldPickerMode.dateAndTime,
-                            autovalidateMode: AutovalidateMode.always,
-                            validator: (e) => (e?.day ?? 0) == 1
-                                ? 'Please not the first day'
-                                : null,
-                            onDateSelected: (DateTime value) {
-                              print(value);
-                            },
-                          ),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold)),
+                          mode: DateTimeFieldPickerMode.dateAndTime,
+                          autovalidateMode: AutovalidateMode.always,
+                          validator: (e) => (e?.day ?? 0) == 1
+                              ? 'Please not the first day'
+                              : null,
+                          onDateSelected: (DateTime value) {
+                            print(value);
+                          },
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   const SizedBox(
                     height: 120,
